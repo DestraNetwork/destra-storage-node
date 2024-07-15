@@ -9,7 +9,7 @@ Before you start, you will need:
 - Node.js and npm installed. You can download these from [Node.js official website](https://nodejs.org/).
 - A public IP address where your node will be accessible.
 - A system running Ubuntu.
-- Sepolia JSON-RPC API.
+- Sepolia JSON-RPC Endpoint.
 
 ## Setup Instructions
 

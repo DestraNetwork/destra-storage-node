@@ -9,7 +9,6 @@ import { MemoryDatastore } from 'datastore-core'
 import { createHelia } from 'helia'
 import { createLibp2p } from 'libp2p'
 import { kadDHT, removePrivateAddressesMapper } from '@libp2p/kad-dht'
-import fs from 'fs';
 import { ethers } from 'ethers';
 import contractABI from './abis/BootstrapPeerRegistry.json'  with { type: "json" };
 import net from 'net';
@@ -86,7 +85,8 @@ function pingHost(ip, port, timeout = 10000) {
 async function createDestraStorageNode() {
     console.log("Creating Destra Storage Node...");
 
-    const blockstore = new FsBlockstore('./block_store')
+    console.log("Setting up directory for block store...")
+    const blockstore = new FsBlockstore(process.env.BLOCKSTORE_DIRECTORY)
 
     const datastore = new MemoryDatastore()
 
@@ -148,9 +148,6 @@ async function main() {
 
     console.log("Destra Storage Node started with MultiAddress and Peer ID:", multiAddrLocation, peerId);
 
-    console.log(`Pinging ${process.env.PUBLIC_IP} on port ${process.env.NODE_PORT} to check firewall settings...`);
-    await pingHost(process.env.PUBLIC_IP, process.env.NODE_PORT);
-    console.log("Ping successful, your firewall settings appear to be correct.");
 
 
 
