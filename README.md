@@ -44,7 +44,8 @@ Now, you need to fill the following env variables:
 ```
 RPC_URL=<Your_Ethereum_Node_RPC_URL>
 PRIVATE_KEY=<Your_Private_Key>
-CONTRACT_ADDRESS=<Destra_Peer_Registry_Address> [Sepolia: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98]
+BOOTSTRAP_CONTRACT_ADDRESS=<Destra_Peer_Registry_Address> [Sepolia: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98]
+STORAGE_NODE_CONTRACT_ADDRESS=<Destra_Nodes_Registry_Address> [Sepolia: 0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB]
 PUBLIC_IP=<Your_Public_IP>
 NODE_PORT=<Port_for_Node_to_Listen_On> [Default for Destra Storage Node is 10806]
 BLOCKSTORE_DIRECTORY=<Path_For_Blockstore>
