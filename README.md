@@ -9,7 +9,8 @@ Before you start, you will need:
 - Node.js and npm installed. You can download these from [Node.js official website](https://nodejs.org/).
 - A public IP address where your node will be accessible.
 - A system running Ubuntu.
-- Sepolia JSON-RPC Endpoint.
+- Sepolia JSON-RPC Endpoint (Recommended: Infura Sepolia RPC API).
+- Wallet with atleast 0.2 Sepolia ETH.
 
 ## Setup Instructions
 
@@ -42,7 +43,7 @@ Now, you need to fill the following env variables:
 
 
 ```
-RPC_URL=<Your_Ethereum_Node_RPC_URL>
+RPC_URL=<Sepolia_RPC_Endpoint> [Example: https://sepolia.infura.io/v3/<Infura_Key>]
 PRIVATE_KEY=<Your_Private_Key>
 BOOTSTRAP_CONTRACT_ADDRESS=<Destra_Peer_Registry_Address> [Sepolia: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98]
 STORAGE_NODE_CONTRACT_ADDRESS=<Destra_Nodes_Registry_Address> [Sepolia: 0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB]
@@ -52,7 +53,7 @@ BLOCKSTORE_DIRECTORY=<Path_For_Blockstore>
 SUBGRAPH_URL=<URL_For_Destra_Storage_Subgraph> [https://api.studio.thegraph.com/query/69390/destra-storage-bootstrap-nodes/version/latest]
 ```
 
-Replace `<Your_Ethereum_Node_RPC_URL>`, `<Your_Private_Key>`, `<Destra_Peer_Registry_Address>`, `<Your_Public_IP>`, `<Port_for_Node_to_Listen_On>`, `<Path_For_Blockstore>`, and `URL_For_Destra_Storage_Subgraph>` with your actual values.
+Replace `<Sepolia_RPC_Endpoint>`, `<Your_Private_Key>`, `<Destra_Peer_Registry_Address>`, `<Your_Public_IP>`, `<Port_for_Node_to_Listen_On>`, `<Path_For_Blockstore>`, and `URL_For_Destra_Storage_Subgraph>` with your actual values.
 
 ### Configure the firewall
 
