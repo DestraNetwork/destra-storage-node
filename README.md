@@ -44,7 +44,7 @@ Now, you need to fill the following env variables:
 
 ```
 RPC_URL=<Sepolia_RPC_Endpoint> [Example: https://sepolia.infura.io/v3/<Infura_Key>]
-PRIVATE_KEY=<Your_Private_Key>
+PRIVATE_KEY=<0xYour_Private_Key>
 BOOTSTRAP_CONTRACT_ADDRESS=<Destra_Peer_Registry_Address> [Sepolia: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98]
 STORAGE_NODE_CONTRACT_ADDRESS=<Destra_Nodes_Registry_Address> [Sepolia: 0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB]
 PUBLIC_IP=<Your_Public_IP>
