@@ -42,18 +42,32 @@ cp .env.example .env
 Now, you need to fill the following env variables:
 
 
+
+- RPC_URL: Your Sepolia RPC Endpoint. Example: https://sepolia.infura.io/v3/<Infura_Key>. (You can create an Infura key by logging into https://app.infura.io and copying the key to replace <Infura_Key>).
+- PRIVATE_KEY: Your private key. (You can get this from your wallets such as Metamask or any other wallet service provider).
+- BOOTSTRAP_CONTRACT_ADDRESS: The address for the Destra Peer Registry. Use this address: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98.
+- STORAGE_NODE_CONTRACT_ADDRESS: The address for the Destra Nodes Registry. Use this address: 0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB.
+- PUBLIC_IP: Your public IP address.
+- NODE_PORT: The port for your node to listen on. Default for Destra Storage Node is 10806.
+- BLOCKSTORE_DIRECTORY: The path for your blockstore directory. Create a new folder named “block_store”
+- SUBGRAPH_URL: The URL for the Destra Storage Subgraph. Use this: https://api.studio.thegraph.com/query/69390/destra-storage-bootstrap-nodes/version/latest.
+
+
+#### Example .env file:
+
+Here is an example of what your configuration might look like:
 ```
-RPC_URL=<Sepolia_RPC_Endpoint> [Example: https://sepolia.infura.io/v3/<Infura_Key>]
+RPC_URL=https://sepolia.infura.io/v3/<Infura_Key>
 PRIVATE_KEY=<0xYour_Private_Key>
-BOOTSTRAP_CONTRACT_ADDRESS=<Destra_Peer_Registry_Address> [Sepolia: 0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98]
-STORAGE_NODE_CONTRACT_ADDRESS=<Destra_Nodes_Registry_Address> [Sepolia: 0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB]
+BOOTSTRAP_CONTRACT_ADDRESS=0xf0DB1777c6f5E7Afb6d9a5af095AE008B9B2aA98
+STORAGE_NODE_CONTRACT_ADDRESS=0x03C66CB1826BDB0395BF31E68Bf7E873e9564fFB
 PUBLIC_IP=<Your_Public_IP>
-NODE_PORT=<Port_for_Node_to_Listen_On> [Default for Destra Storage Node is 10806]
-BLOCKSTORE_DIRECTORY=<Path_For_Blockstore>
-SUBGRAPH_URL=<URL_For_Destra_Storage_Subgraph> [https://api.studio.thegraph.com/query/69390/destra-storage-bootstrap-nodes/version/latest]
+NODE_PORT=10806
+BLOCKSTORE_DIRECTORY=./block_store/
+SUBGRAPH_URL=https://api.studio.thegraph.com/query/69390/destra-storage-bootstrap-nodes/version/latest
 ```
 
-Replace `<Sepolia_RPC_Endpoint>`, `<Your_Private_Key>`, `<Destra_Peer_Registry_Address>`, `<Your_Public_IP>`, `<Port_for_Node_to_Listen_On>`, `<Path_For_Blockstore>`, and `URL_For_Destra_Storage_Subgraph>` with your actual values.
+Replace `<Infura_Key>`, `<Your_Private_Key>`, and `<Your_Public_IP>` with your actual values.
 
 ### Configure the firewall
 
@@ -65,6 +79,11 @@ sudo ufw allow <Port_for_Node_to_Listen_On>/tcp
 
 Replace `<Port_for_Node_to_Listen_On>` with the port number you are using.
 
+#### Example:
+
+```
+sudo ufw allow 10806/tcp
+```
 
 ### Start the Node
 
