@@ -14,6 +14,111 @@ Before you start, you will need:
 
 ## Setup Instructions
 
+You can start a storage node by either following the one-command setup instructions for your Operating System or manual setup instructions.
+
+### One-Command Setup for Linux/Ubuntu Platforms:
+
+#### Download the Script:
+
+Use the `wget` command below to download the setup script, or retrieve the [destra_storage_ubuntu_setup.sh](https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_ubuntu_setup.sh) file from the repository.
+
+```
+wget https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_ubuntu_setup.sh
+```
+
+#### Make the Script Executable:
+
+Change the file permissions to make the script executable by running the following command:
+
+```
+chmod +x destra_storage_ubuntu_setup.sh
+```
+
+#### Run the Script:
+
+Execute the script with the following command:
+
+```
+./destra_storage_ubuntu_setup.sh
+```
+
+#### Follow the Prompts:
+
+Follow the on-screen prompts to provide the necessary environment variables. The session will then start in the background using tmux.
+
+#### Access the tmux Session:
+
+You can access the tmux session by using the following commands:
+
+```
+tmux ls
+tmux attach-session -t storage-node
+```
+
+### One-Command Setup for Mac OS:
+
+#### Download the Script:
+
+Download the [destra_storage_mac_setup.sh](https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_mac_setup.sh) file from the repository.
+
+#### Make the Script Executable:
+
+Change the file permissions to make the script executable by running the following command:
+
+```
+chmod +x destra_storage_mac_setup.sh
+```
+
+#### Run the Script:
+
+Execute the script with the following command:
+
+```
+./destra_storage_mac_setup.sh
+```
+
+#### Follow the Prompts:
+
+Follow the on-screen prompts to provide the necessary environment variables. The session will then start in the background using tmux.
+
+#### Access the tmux Session:
+
+You can access the tmux session by using the following commands:
+
+```
+tmux ls
+tmux attach-session -t storage-node
+```
+
+### One-Command Setup for Windows (Experimental):
+
+#### Download the Script:
+
+Download the [destra_storage_windows_setup.ps1](https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_windows_setup.sh) file from the repository.
+
+#### Run the Script:
+
+Execute the script with the following command:
+
+```
+.\destra_storage_windows_setup.ps1
+```
+
+#### Follow the Prompts:
+
+Follow the on-screen prompts to provide the necessary environment variables. The session will then start in the background using pm2.
+
+#### Access the tmux Session:
+
+You can access the pm2 session by using the following commands:
+
+```
+pm2 list
+pm2 logs destra-storage-node
+```
+
+### Manual Setup
+
 ### Clone the repository
 
 First, clone this repository to your local machine using the following command:
