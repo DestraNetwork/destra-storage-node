@@ -23,7 +23,7 @@ You can start a storage node by either following the one-command setup instructi
 Use the `wget` command below to download the setup script, or retrieve the [destra_storage_ubuntu_setup.sh](https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_ubuntu_setup.sh) file from the repository.
 
 ```
-wget https://github.com/DestraNetwork/destra-storage-node/tree/main/scripts/destra_storage_ubuntu_setup.sh
+wget https://raw.githubusercontent.com/DestraNetwork/destra-storage-node/main/scripts/destra_storage_ubuntu_setup.sh
 ```
 
 #### Make the Script Executable:
