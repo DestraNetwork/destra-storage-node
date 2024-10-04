@@ -1,0 +1,37 @@
+FROM ubuntu
+
+RUN apt update
+RUN apt upgrade -y
+RUN apt install wget -y
+RUN apt install npm -y
+RUN apt install tmux -y
+RUN apt install curl -y
+
+SHELL ["/bin/bash", "-c"]
+
+# Now any RUN command will use Bash
+RUN echo "Switched to Bash"
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+RUN source ~/.nvm/nvm.sh
+
+#node.js process manager - used for pumping logs back to standard out.
+RUN npm install pm2 -g
+
+### modifying setup script to remove interactivity for repeatable ci/cd
+### TO DO - Modify setup script with commands to maintain updates from dev team.
+#RUN wget https://raw.githubusercontent.com/DestraNetwork/destra-storage-node/main/scripts/destra_storage_ubuntu_setup.sh
+WORKDIR /usr/src/destra
+COPY destra_storage_ubuntu_setup_non_interactive.sh .
+RUN chmod +x destra_storage_ubuntu_setup_non_interactive.sh
+RUN ./destra_storage_ubuntu_setup_non_interactive.sh
+
+WORKDIR /usr/src/destra/destra-storage-node
+
+COPY .env .
+COPY start-destra.sh .
+RUN chmod +x start-destra.sh
+
+CMD ["/bin/bash","start-destra.sh"]
+#CMD ["tail", "-f", "/dev/null"]
+#CMD ["pm2", "start", "destra-storage-node", "--attach"]

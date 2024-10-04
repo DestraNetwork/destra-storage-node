@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  destra-storagenode:
+    container_name: destra-storagenode
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: DOCKERFILE
+      no_cache: true
+    volumes:
+      - /mnt/destra-storage:/destra-storage
+
+    image: destra-storagenode:latest
